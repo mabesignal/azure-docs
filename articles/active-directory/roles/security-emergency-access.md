@@ -94,6 +94,25 @@ Organizations should monitor sign-in and audit log activity from the emergency a
         > For each additional break glass account you want to include, add another "or UserId == "ObjectGuid"" to the query.
 
         ![Add the object IDs of the break glass accounts to an alert rule](./media/security-emergency-access/query-image1.png)
+        
+        Sample queries:
+        ```Search by single Object ID (UserId)
+        SigninLogs
+        | project UserId 
+        | where UserId == "f66e7317-2ad4-41e9-8238-3acf413f7448"
+        ```
+        
+         ```Search by multiple Object IDs (UserIds)
+        SigninLogs
+        | project UserId 
+        | where UserId == "f66e7317-2ad4-41e9-8238-3acf413f7448" or UserId == "0383eb26-1cbc-4be7-97fd-e8a0d8f4e62b"
+        ```
+        
+        ```Search by UserPrincipalName
+        SigninLogs
+        | project UserPrincipalName 
+        | where UserPrincipalName == "user@domain.onmicrosoft.com"
+        ```
 
     1. Under **Alert logic**, enter the following:
 
