@@ -207,6 +207,10 @@ Now you can use the SPN to automatically access EA APIs. The SPN has the Subscri
 
 You must identify and use the Enterprise application object ID where you granted the EA role. If you use the Object ID from some other application, API calls will fail. Verify that you’re using the correct Enterprise application object ID.
 
+If you receive the error below when making your API call, then you may be incorrectly using the SPN object ID from App Registrations. You must use the SPN object ID listed in the Azure Portal under Enterprise Applications, not the value from App Registrations.
+
+`The provided principal Tenant Id = xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx and principal Object Id xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx are not valid`
+
 ## Next steps
 
 Learn more about [Azure EA portal administration](ea-portal-administration.md).
